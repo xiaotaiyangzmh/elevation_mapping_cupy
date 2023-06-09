@@ -1,6 +1,7 @@
 # Elevation Mapping cupy
 # change1
 https://docs.cupy.dev/en/stable/install.html#limitations
+https://github.com/leggedrobotics/elevation_mapping_cupy/issues/43
 ## Overview
 
 This is a ROS package for elevation mapping on GPU. The elevation mapping code is written in python and uses cupy for GPU computation. The

@@ -23,9 +23,11 @@ ConvexPlaneExtractionROS::ConvexPlaneExtractionROS(ros::NodeHandle& nodeHandle) 
     insetPublisher_ = nodeHandle.advertise<visualization_msgs::MarkerArray>("insets", 1);
     regionPublisher_ = nodeHandle.advertise<convex_plane_decomposition_msgs::PlanarTerrain>("planar_terrain", 1);
   }
+  std::cerr << "- one" << std::endl;
 }
 
 ConvexPlaneExtractionROS::~ConvexPlaneExtractionROS() {
+std::cerr << "- two" << std::endl;
   if (callbackTimer_.getNumTimedIntervals() > 0 && planeDecompositionPipeline_ != nullptr) {
     std::stringstream infoStream;
     infoStream << "\n########################################################################\n";
@@ -86,6 +88,7 @@ bool ConvexPlaneExtractionROS::loadParameters(const ros::NodeHandle& nodeHandle)
 }
 
 void ConvexPlaneExtractionROS::callback(const grid_map_msgs::GridMap& message) {
+
   callbackTimer_.startTimer();
 
   // Convert message to map.

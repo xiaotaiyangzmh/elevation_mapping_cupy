@@ -3,6 +3,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 //
 
+
 // Pybind
 #include <pybind11/embed.h>  // everything needed for embedding
 
@@ -12,6 +13,7 @@
 #include "elevation_mapping_cupy/elevation_mapping_ros.hpp"
 
 int main(int argc, char** argv) {
+  std::cout << "emap- START OF MAIN" << std::endl;
   ros::init(argc, argv, "elevation_mapping");
   ros::NodeHandle nh("~");
 
